@@ -6,7 +6,7 @@ export class ArtistMusicService {
 
     async GetArtistMusic(artistID: string): Promise<ArtistMusic[] | HttpStatus> {
         try {
-            const response = await fetch(`https://api.deezer.com/artist/${artistID}/top`, {
+            const response = await fetch(`https://api.deezer.com/artist/${artistID}/top?limit=100`, {
                 method: 'GET'
             });
             const data = await response.json();
