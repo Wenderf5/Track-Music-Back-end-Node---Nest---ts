@@ -9,7 +9,7 @@ export class TopMusicService {
                 method: 'GET'
             });
             const data = await response.json();
-            const arrayTopMusic = [];
+            const arrayTopMusic: topMusic[] = [];
             data.data.map((track: any, index: number) => {
                 arrayTopMusic.push({
                     title: track.title,
@@ -18,6 +18,7 @@ export class TopMusicService {
                         name: track.artist.name
                     },
                     album: {
+                        title: track.album.title,
                         cover_big: track.album.cover_big
                     }
                 });

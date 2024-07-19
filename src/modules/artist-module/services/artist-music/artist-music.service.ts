@@ -19,6 +19,7 @@ export class ArtistMusicService {
                         name: track.artist.name
                     },
                     album: {
+                        title: track.album.title,
                         cover_big: track.album.cover_big
                     }
                 })
