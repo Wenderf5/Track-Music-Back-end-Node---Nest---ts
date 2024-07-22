@@ -4,12 +4,17 @@ import { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.int
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  
   const corsOptions: CorsOptions = {
-    origin: ["https://track-music-client.vercel.app", "http://localhost:5173"]
+    origin: ["https://track-music-client.vercel.app", "http://localhost:5173"],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   };
+
   app.enableCors(corsOptions);
+  
   await app.listen(8080, () => {
-    console.log("Server running!");
+    console.log("Server running on port 8080");
   });
 }
+
 bootstrap();
