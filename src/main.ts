@@ -6,7 +6,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   
   const corsOptions: CorsOptions = {
-    origin: ["https://track-music-client.vercel.app", "http://localhost:5173"],
+    origin: '*',
     allowedHeaders: ['Content-Type', 'Authorization'],
   };
 
