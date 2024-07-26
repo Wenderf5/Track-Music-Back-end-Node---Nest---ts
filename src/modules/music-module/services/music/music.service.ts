@@ -5,7 +5,7 @@ import { music } from './types/music';
 export class MusicService {
     async SearchMusic(music: string): Promise<music[] | HttpStatus> {
         try {
-            const response = await fetch(`https://api.deezer.com/search?q=${music}`, {
+            const response = await fetch(`https://api.deezer.com/search?q=${music}&limit=100`, {
                 method: 'GET'
             });
             const data = await response.json();
