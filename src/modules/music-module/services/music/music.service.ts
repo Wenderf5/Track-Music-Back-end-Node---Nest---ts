@@ -8,9 +8,9 @@ export class MusicService {
             const response = await fetch(`https://api.deezer.com/search?q=${music}&limit=100`, {
                 method: 'GET'
             });
-            const data = await response.json();
+            const result = await response.json();
             const arrayMusic: music[] = [];
-            data.data.map((track: any, index: number) => {
+            result.data.map((track) => {
                 arrayMusic.push({
                     title: track.title,
                     preview: track.preview,

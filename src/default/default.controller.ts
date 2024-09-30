@@ -5,6 +5,6 @@ export class DefaultController {
 
     @Get('/')
     DefaultRote(){
-        return "Hello world!"
+        return "Hello world!";
     }
 }

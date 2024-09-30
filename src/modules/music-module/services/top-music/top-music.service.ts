@@ -5,7 +5,7 @@ import { topMusic } from './types/topMusic';
 export class TopMusicService {
     async GetTopMusic(): Promise<topMusic[] | HttpStatus> {
         try {
-            const response = await fetch('https://api.deezer.com/chart/0/tracks?limit=50', {
+            const response = await fetch('https://api.deezer.com/chart/0/tracks?limit=100', {
                 method: 'GET'
             });
             const data = await response.json();
